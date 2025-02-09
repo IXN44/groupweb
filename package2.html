@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAvelous Auto Detailing - Nano Wash</title>
+    <link rel="shortcut Icon" type="image/png" href="RALogo.png">
+    <style>
+        body {
+            margin: 0;
+            font-family: Helvetica, sans-serif;
+            background-color: black;
+            color: white;
+            background-image: url('BackgroundImage.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        nav .logo img {
+            width: 150px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 18px;
+            font-size: 20px;
+        }
+
+        nav a:hover {
+            color: red;
+        }
+
+        nav::after {
+            content: "";
+            display: block;
+            height: 4px;
+            background-color: red;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        nav a.active {
+            color: red;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            z-index: 1100; 
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1101; 
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            top: 100%; 
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: rgba(34, 34, 34, 0.8);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 100px;
+        }
+
+        .car-types {
+            width: 50%;
+            padding: 20px;
+        }
+
+        .car-types h1 {
+            font-size: 5em;
+        }
+
+        .car-box {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 20px;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+
+        .car-box:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .car-box.active {
+            background: red;
+            color: white;
+        }
+
+        .drawer {
+            display: none;
+            margin-top: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid white;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .drawer table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .drawer table th, .drawer table td {
+            border: 1px solid white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .drawer table th {
+            background: rgba(255, 0, 0, 0.7);
+        }
+
+        .car-image {
+            width: 45%;
+            padding: 20px;
+        }
+
+        .car-image img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .footer {
+            background-color: red;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <nav>
+        <div class="logo">
+            <img src="RAvelousWebLogo1.png" alt="RAvelous Logo">
+        </div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <div class="dropdown">
+                <a href="packages.html" class="active">Packages</a>
+                <div class="dropdown-content">
+                    <a href="package1.html">Bronze Wash</a>
+                    <a href="package2.html">Nano Wash</a>
+                    <a href="package3.html">Platinum Wash</a>
+                    <a href="package4.html">Polish & Wax</a>
+                    <a href="package5.html">Ceramic Coating</a>
+                </div>
+            </div>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="car-types">
+            <h1>NANO WASH</h1>
+            <div class="car-box" onclick="toggleDrawer('kcar-drawer', this)">K-CAR</div>
+            <div id="kcar-drawer" class="drawer">
+                <table>
+                    <tr>
+                        <th>SIZE</th>
+                        <th>PRICE (RM)</th>
+                    </tr>
+                    <tr>
+                        <td>S</td>
+                        <td>RM 28</td>
+                    </tr>
+                    <tr>
+                        <td>M</td>
+                        <td>RM 30</td>
+                    </tr>
+                    <tr>
+                        <td>L</td>
+                        <td>RM 34</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="car-box" onclick="toggleDrawer('sedan-drawer', this)">SEDAN</div>
+            <div id="sedan-drawer" class="drawer">
+                <table>
+                    <tr>
+                        <th>SIZE</th>
+                        <th>PRICE (RM)</th>
+                    </tr>
+                    <tr>
+                        <td>M</td>
+                        <td>RM 32</td>
+                    </tr>
+                    <tr>
+                        <td>L</td>
+                        <td>RM 34</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="car-box" onclick="toggleDrawer('suv-drawer', this)">SUV/MPV</div>
+            <div id="suv-drawer" class="drawer">
+                <table>
+                    <tr>
+                        <th>SIZE</th>
+                        <th>PRICE (RM)</th>
+                    </tr>
+                    <tr>
+                        <td>S</td>
+                        <td>RM 34</td>
+                    </tr>
+                    <tr>
+                        <td>M</td>
+                        <td>RM 36</td>
+                    </tr>
+                    <tr>
+                        <td>L</td>
+                        <td>RM 38</td>
+                    </tr>
+                    <tr>
+                        <td>XL</td>
+                        <td>RM 40</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="car-box" onclick="toggleDrawer('4x4-drawer', this)">4X4</div>
+            <div id="4x4-drawer" class="drawer">
+                <table>
+                    <tr>
+                        <th>SIZE</th>
+                        <th>PRICE (RM)</th>
+                    </tr>
+                    <tr>
+                        <td>All Size</td>
+                        <td>RM 40</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="car-box" onclick="toggleDrawer('van-drawer', this)">VAN / VELLFIRE</div>
+            <div id="van-drawer" class="drawer">
+                <table>
+                    <tr>
+                        <th>SIZE</th>
+                        <th>PRICE (RM)</th>
+                    </tr>
+                    <tr>
+                        <td>All Size</td>
+                        <td>RM 46</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="car-image">
+            <img src="NanoWash.JPG" alt="Bronze Wash">
+        </div>
+    </div>
+    <div class="footer">
+        <p>Disclaimer: This website is only developed to fullfil the requiremenet for IMD318 group assignment purposes ©RAvelous</p>
+    </div>
+</div>
+
+<script>
+    function toggleDrawer(id, element) {
+        const allDrawers = document.querySelectorAll('.drawer');
+        const allBoxes = document.querySelectorAll('.car-box');
+        allDrawers.forEach(drawer => (drawer.style.display = 'none'));
+        allBoxes.forEach(box => box.classList.remove('active'));
+
+        const drawer = document.getElementById(id);
+        if (drawer.style.display !== 'block') {
+            drawer.style.display = 'block';
+            element.classList.add('active');
+        }
+    }
+</script>
+
+</body>
+</html>
