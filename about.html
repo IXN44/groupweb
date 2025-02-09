@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAvelous Auto Detailing - About</title>
+    <link rel="shortcut Icon" type="image/png" href="RALogo.png">
+    <style>
+        body {
+            margin: 0;
+            font-family: Helvetica, sans-serif;
+            background-color: black;
+            color: white;
+            background-image: url('BackgroundImage.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        nav .logo img {
+            width: 150px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 18px;
+            font-size: 20px;
+        }
+
+        nav a:hover {
+            color: red;
+        }
+
+        nav::after {
+            content: "";
+            display: block;
+            height: 4px; /* Adjust height as needed */
+            background-color: red;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        nav a.active {
+            color: red;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            z-index: 1100; 
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1101; 
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            top: 100%; 
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: rgba(34, 34, 34, 0.8);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        section {
+            padding: 100px 60px;
+            margin-top: 0px; /* To offset fixed nav */
+        }
+
+        .about-header h1 {
+            font-size: 5em;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .about-content {
+            text-align: justify;
+            color: rgb(176, 176, 176);
+            line-height: 1.8;
+            font-size: 2em;
+        }
+
+        .vision {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .vision h2 {
+            font-size: 5em;
+            margin-bottom: 20px;
+        }
+
+        .vision p {
+            text-align: right;
+            color: rgb(176, 176, 176);
+            line-height: 1.8;
+            font-size: 2em;
+        }
+
+        .mission h2 {
+            font-size: 5em;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .mission ul {
+            text-align: left;
+            list-style: disc;
+            padding: 0;
+            color: rgb(176, 176, 176);
+            line-height: 1.8;
+            font-size: 30px;
+        }
+
+        .mission ul li {
+            margin: 10px 0;
+        }
+
+        .logo-section h2 {
+            font-size: 5em;
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .logo-section img {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 10000px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-section img:hover {
+            transform: scale(1.01);
+            box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .location h2 {
+            font-size: 5em;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .location iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+
+        .mission .red-line,
+        .location .red-line {
+            width: 700px;
+            height: 10px;
+            background-color: red;
+            margin-right: auto; /* Pushes the line to the left */
+            margin-bottom: 20px;
+        }
+
+        .vision .red-line,
+        .logo-section .red-line {
+            width: 700px;
+            height: 10px;
+            background-color: red;
+            margin-left: auto; /* Pushes the line to the right */
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            background-color: red;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <nav>
+        <div class="logo">
+            <img src="RAvelousWebLogo1.png" alt="RAvelous Logo">
+        </div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="services.html">Services</a>
+            <div class="dropdown">
+                <a href="packages.html">Packages</a>
+                <div class="dropdown-content">
+                    <a href="package1.html">Bronze Wash</a>
+                    <a href="package2.html">Nano Wash</a>
+                    <a href="package3.html">Platinum Wash</a>
+                    <a href="package4.html">Polish & Wax</a>
+                    <a href="package5.html">Ceramic Coating</a>
+                </div>
+            </div>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </nav>
+
+    <section class="about-header">
+        <h1>ABOUT RAVELOUS AUTO DETAILING</h1>
+        <p class="about-content">RAvelous Auto Detailing was established in 2023 by R.A Infinit Solutions. It is an auto detailing business that specializes in washing, waxing, polishing, and coating. Since its establishment, RAvelous Auto Detailing has partnered with Osren to ensure that they can give their customers the best auto detailing services in Sarawak.</p>
+    </section>
+
+    <section class="vision">
+        <div class="red-line"></div>
+        <h2>OUR VISION</h2>
+        <p>To be the leading auto detailing service provider in Sarawak, recognized for exceptional quality and customer satisfaction.</p>
+    </section>
+
+    <section class="mission">
+        <div class="red-line"></div>
+        <h2>OUR MISSION</h2>
+        <ul>
+            <li>To deliver premium auto detailing services using advanced techniques and high-quality products in partnership with Osren.</li>
+            <li>To prioritize customer satisfaction by providing personalised, professional, and reliable solutions.</li>
+            <li>To continuously innovate and enhance our services to maintain the highest standards of excellence.</li>
+            <li>To foster trust and build lasting relationships with our customers by exceeding their expectations in every service we provide.</li>
+        </ul>
+    </section>
+
+    <section class="logo-section">
+        <div class="red-line"></div>
+        <h2>OUR LOGO</h2>
+        <img src="RAvelousLogo.png" alt="RAvelous Auto Detailing Logo">
+    </section>
+
+    <section class="location">
+        <div class="red-line"></div>
+        <h2>LOCATION</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2202.8410539197885!2d110.41543845627108!3d1.4720295667892003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba1cca122c67d%3A0x5fc4c773e1df97e0!2sRAvelous%20Auto%20Detailing%20(wash%2Cwax%2Cpolish%2Ccoating)!5e0!3m2!1sen!2smy!4v1736087492603!5m2!1sen!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </section>
+
+    <div class="footer">
+        <p>Disclaimer: This website is only developed to fullfil the requiremenet for IMD318 group assignment purposes ©RAvelous</p>
+    </div>
+</div>
+
+</body>
+</html>
